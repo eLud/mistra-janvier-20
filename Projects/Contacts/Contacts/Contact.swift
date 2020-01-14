@@ -1,10 +1,28 @@
-//import UIKit // Interface Graphique iOS
-import Foundation // Contient les types Date, Data, URL, etc.
+//
+//  Contact.swift
+//  Contacts
+//
+//  Created by Ludovic Ollagnier on 14/01/2020.
+//  Copyright © 2020 Tectec. All rights reserved.
+//
 
-enum TypeContact {
+import Foundation
+
+enum TypeContact: Int, CaseIterable {
     case pro
     case perso
     case partagé
+
+    var title: String {
+        switch self {
+        case .pro:
+            return "Pro"
+        case .perso:
+            return "Perso"
+        case .partagé:
+            return "Partagé"
+        }
+    }
 }
 
 struct Contact {
@@ -43,28 +61,3 @@ struct Contact {
         }
     }
 }
-
-class Annuaire {
-
-    private var contacts: [Contact]
-
-    init() {
-        contacts = []
-    }
-
-    func ajouter(_ newContact: Contact) {
-        contacts.append(newContact)
-    }
-
-    //propriété calculée (get only), return automatique car 1 seule ligne
-    var allContacts: [Contact] { contacts }
-}
-
-let monAnnuaire = Annuaire()
-let moi = Contact(nom: "Ollagnier", prenom: "Ludovic", estDispo: true)
-
-monAnnuaire.ajouter(moi)
-monAnnuaire.ajouter(moi)
-print(monAnnuaire.allContacts)
-
-moi.email?.lowercased()
