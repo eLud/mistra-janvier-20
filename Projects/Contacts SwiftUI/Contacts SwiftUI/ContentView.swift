@@ -53,7 +53,7 @@ struct ContentView: View {
 
                     }) {
                         Text("Save")
-                    }
+                    }.background(/*@START_MENU_TOKEN@*/Color("testColor")/*@END_MENU_TOKEN@*/)
                 }
 
             }
