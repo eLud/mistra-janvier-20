@@ -14,6 +14,8 @@
 		335C8D2923CDDE9500855D35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 335C8D2823CDDE9500855D35 /* Assets.xcassets */; };
 		335C8D2C23CDDE9500855D35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 335C8D2B23CDDE9500855D35 /* Preview Assets.xcassets */; };
 		335C8D2F23CDDE9500855D35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335C8D2D23CDDE9500855D35 /* LaunchScreen.storyboard */; };
+		33B67CC823CF6A4C00BDE948 /* Annuaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B67CC723CF6A4C00BDE948 /* Annuaire.swift */; };
+		33B67CCA23CF6B1B00BDE948 /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B67CC923CF6B1B00BDE948 /* ContactListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		335C8D2B23CDDE9500855D35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		335C8D2E23CDDE9500855D35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		335C8D3023CDDE9500855D35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33B67CC723CF6A4C00BDE948 /* Annuaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annuaire.swift; sourceTree = "<group>"; };
+		33B67CC923CF6B1B00BDE948 /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +65,9 @@
 				335C8D2223CDDE9400855D35 /* AppDelegate.swift */,
 				335C8D2423CDDE9400855D35 /* SceneDelegate.swift */,
 				335C8D2623CDDE9400855D35 /* ContentView.swift */,
+				33B67CC923CF6B1B00BDE948 /* ContactListView.swift */,
 				332651DB23CE0C9700116C48 /* Contact.swift */,
+				33B67CC723CF6A4C00BDE948 /* Annuaire.swift */,
 				335C8D2823CDDE9500855D35 /* Assets.xcassets */,
 				335C8D2D23CDDE9500855D35 /* LaunchScreen.storyboard */,
 				335C8D3023CDDE9500855D35 /* Info.plist */,
@@ -151,6 +157,8 @@
 			files = (
 				332651DC23CE0C9700116C48 /* Contact.swift in Sources */,
 				335C8D2323CDDE9400855D35 /* AppDelegate.swift in Sources */,
+				33B67CC823CF6A4C00BDE948 /* Annuaire.swift in Sources */,
+				33B67CCA23CF6B1B00BDE948 /* ContactListView.swift in Sources */,
 				335C8D2523CDDE9400855D35 /* SceneDelegate.swift in Sources */,
 				335C8D2723CDDE9400855D35 /* ContentView.swift in Sources */,
 			);

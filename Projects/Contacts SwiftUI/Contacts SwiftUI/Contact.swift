@@ -30,7 +30,7 @@ enum TypeContact: Int, CaseIterable, Identifiable {
     }
 }
 
-struct Contact {
+struct Contact: Identifiable {
 
     var nom: String
     var prenom: String
@@ -42,6 +42,8 @@ struct Contact {
     var dateNaissance: Date?
 
     var type: TypeContact
+
+    let id: UUID = UUID()
 
     init(nom: String, prenom: String, estDispo: Bool = false) {
         self.nom = nom

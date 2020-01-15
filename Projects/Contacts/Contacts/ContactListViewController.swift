@@ -12,28 +12,40 @@ class ContactListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    var annuaire = Annuaire()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
+        for i in 0...10000 {
+            annuaire.ajouter(Contact(nom: "Ludovic \(i)", prenom: "Ollagnier"))
+        }
 
         tableView.dataSource = self
     }
 }
 
 extension ContactListViewController: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return annuaire.allContacts.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
 
-        cell.textLabel?.text = "Démo"
-        
+//        let index = indexPath.row
+//        indexPath.section
+
+        let contact = annuaire.allContacts[indexPath.row]
+
+        cell.textLabel?.text = contact.nom
+        cell.detailTextLabel?.text = contact.prenom
+
+        print(indexPath)
         return cell
     }
-
-
 }
