@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct AddContactView: View {
 
     @State private var nom: String = ""
     @State private var prenom: String = ""
@@ -58,12 +58,12 @@ struct ContentView: View {
 
             }
 
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        AddContactView()
     }
 }

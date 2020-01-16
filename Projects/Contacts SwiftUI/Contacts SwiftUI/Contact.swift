@@ -67,4 +67,11 @@ struct Contact: Identifiable {
             // Autre chose
         }
     }
+
+    var initials: String {
+           let firstNameInitial = prenom.first ?? Character("X")
+           let lastNameInitial = nom.first ?? Character("X")
+
+           return "\(firstNameInitial)\(lastNameInitial)"
+       }
 }
