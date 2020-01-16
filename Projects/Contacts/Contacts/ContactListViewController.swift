@@ -25,6 +25,28 @@ class ContactListViewController: UIViewController {
 
         tableView.dataSource = self
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        print("Prepare for segue")
+        if segue.identifier == "details" {
+            // vers details
+            guard let indexPathCell = tableView.indexPathForSelectedRow else {
+                return
+            }
+            guard let ecranDetails = segue.destination as? ContactDetailsViewController else {
+                return
+            }
+
+            let contact = annuaire.allContacts[indexPathCell.row]
+            ecranDetails.contact = contact
+
+        } else if segue.identifier == "form" {
+            //vers formulaire
+
+            //Faire passer l'annuaire, pour avoir un annuaire partagé
+        }
+    }
 }
 
 extension ContactListViewController: UITableViewDataSource {
