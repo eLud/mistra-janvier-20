@@ -19,15 +19,19 @@ class ContactListViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 
-        for i in 0...10000 {
-            annuaire.ajouter(Contact(nom: "Ludovic \(i)", prenom: "Ollagnier"))
-        }
+//        for i in 0...10000 {
+//            annuaire.ajouter(Contact(nom: "Ludovic \(i)", prenom: "Ollagnier"))
+//        }
 
         tableView.dataSource = self
+
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(forName: Notification.Name("nouveauContact"), object: annuaire, queue: nil) { (notif) in
+            self.tableView.reloadData()
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         print("Prepare for segue")
         if segue.identifier == "details" {
             // vers details
@@ -45,6 +49,10 @@ class ContactListViewController: UIViewController {
             //vers formulaire
 
             //Faire passer l'annuaire, pour avoir un annuaire partagé
+            guard let nav = segue.destination as? UINavigationController, let formulaire = nav.viewControllers.first as? ViewController else {
+                  return
+            }
+            formulaire.annuaire = self.annuaire
         }
     }
 }

@@ -18,6 +18,9 @@ class Annuaire {
 
     func ajouter(_ newContact: Contact) {
         contacts.append(newContact)
+
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.post(name: Notification.Name("nouveauContact"), object: self)
     }
 
     //propriété calculée (get only), return automatique car 1 seule ligne

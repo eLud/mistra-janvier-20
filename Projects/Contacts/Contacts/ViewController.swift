@@ -59,6 +59,7 @@ class ViewController: UIViewController {
         }
 
         annuaire?.ajouter(contact)
+        dismiss(animated: true, completion: nil)
     }
 }
 
