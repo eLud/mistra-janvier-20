@@ -21,6 +21,9 @@ struct AddContactView: View {
 
     @State private var type: TypeContact = .perso
 
+    @ObservedObject var annuaire: Annuaire
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     var body: some View {
         NavigationView {
             Form {
@@ -47,13 +50,14 @@ struct AddContactView: View {
                 }
                 Section {
                     Button(action: {
-
+                        guard !self.nom.isEmpty, !self.prenom.isEmpty else { return }
                         let contact = Contact(nom: self.nom, prenom: self.prenom)
-                        print(contact)
+                        self.annuaire.ajouter(contact)
 
+                        self.presentationMode.wrappedValue.dismiss()
                     }) {
                         Text("Save")
-                    }.background(/*@START_MENU_TOKEN@*/Color("testColor")/*@END_MENU_TOKEN@*/)
+                    }
                 }
 
             }
@@ -64,6 +68,6 @@ struct AddContactView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        AddContactView()
+        AddContactView(annuaire: Annuaire())
     }
 }

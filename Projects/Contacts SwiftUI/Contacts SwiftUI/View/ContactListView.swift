@@ -28,7 +28,7 @@ struct ContactListView: View {
                 .frame(width: 20, height: 20)
         }))
             .sheet(isPresented: $addContact) {
-                AddContactView()
+                AddContactView(annuaire: self.annuaire)
         }
     }
 }
