@@ -27,6 +27,7 @@ class ContactListViewController: UIViewController {
 
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(forName: Notification.Name("nouveauContact"), object: annuaire, queue: nil) { (notif) in
+            self.dismiss(animated: true, completion: nil)
             self.tableView.reloadData()
         }
     }
